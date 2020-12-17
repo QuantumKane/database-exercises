@@ -35,6 +35,6 @@ WHERE sales < 20;
 
 # All the albums with a genre of "Rock". Why do these query results not include albums with a genre of "Hard rock" or "Progressive rock"?
 SELECT name
-FROM albums
+FROM `albums`
 WHERE genre = 'Rock';
-# These query results not include albums with a genre of "Hard rock" or "Progressive rock" because SQL is specific
+# These query results not include albums with a genre of "Hard rock" or "Progressive rock" because SQL is specific. We would have to include the other genres seperated by commas if we wanted to include them.
