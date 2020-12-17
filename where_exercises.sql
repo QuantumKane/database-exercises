@@ -77,5 +77,5 @@ WHERE last_name LIKE '%q%';
 SELECT *
 FROM employees
 WHERE last_name LIKE '%q%' 
-AND last_name NOT LIKE '%qu%';
+AND NOT last_name LIKE '%qu%';
 # 547 rows returned
