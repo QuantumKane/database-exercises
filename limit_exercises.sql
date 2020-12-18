@@ -4,7 +4,8 @@
 
 SELECT DISTINCT last_name 
 FROM employees
-ORDER BY last_name DESC;
+ORDER BY last_name DESC
+LIMIT 10;
 
 # First 10 names: 
 --Zykh
@@ -38,17 +39,17 @@ LIMIT 5;
 
 #4. Update the query to find the tenth page of results
 
-ELECT first_name, last_name
+SELECT first_name, last_name
 FROM employees
 WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
 	AND birth_date LIKE '%-12-25'
 ORDER BY hire_date
-LIMIT 5 OFFSET 50;
+LIMIT 5 OFFSET 45;
 
 # 10th page of results:
---Christophe Baca
---Moie Birsak
---Chikako Ibel
---Shounak Jansen
---Zhigen Boissier
-# To get to a specific page, you have to multiply your LIMIT (in this case, 5) by your desired page # (in this case, 10) to get the OFFSET
+--Pranay Narwekar
+--Marjo	Farrow
+--Ennio	Karcich
+--Dines	Lubachevsky
+--Ipke	Fontan
+# To get to a specific page, you have to multiply your LIMIT (in this case, 5) by your desired page #-1 (in this case, 10) to get the OFFSET
