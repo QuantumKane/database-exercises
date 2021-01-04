@@ -49,6 +49,15 @@ ORDER BY last_name;
 
 # The query returned 547 observations
 
+SELECT COUNT(last_name)
+FROM employees
+WHERE last_name LIKE '%q%' 
+	AND last_name NOT LIKE '%qu%'
+GROUP BY last_name
+ORDER BY last_name;
+
+# An alternate query
+
 #7. Find all all employees with first names 'Irena', 'Vidya', or 'Maya'. Use COUNT(*) and GROUP BY to find the number of employees for each gender with those names.
 
 SELECT gender, COUNT(*) as number
