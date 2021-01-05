@@ -31,6 +31,7 @@ from users
 right join roles on users.role_id = roles.id;
 group by roles.name;
 
+
 PART TWO:
 # 1. Use the employees database
 
@@ -66,6 +67,7 @@ FROM dept_emp AS de
 JOIN titles AS t 
 	ON t.emp_no = de.emp_no
 WHERE t.to_date > curdate()
+    AND de.to_date > curdate()
 	AND de.dept_no = 'd009'
 GROUP BY t.title;
 
