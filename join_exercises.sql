@@ -87,12 +87,12 @@ ORDER BY d.dept_name;
 
 # 6. Find the number of current employees in each department.
 
-SELECT ed.dept_no, ed.dept_name, COUNT(de.emp_no)
-FROM employees_with_departments AS ed
-	JOIN dept_emp AS de ON de.emp_no = ed.emp_no
+SELECT d.dept_no, d.dept_name, COUNT(de.emp_no) AS 'num_employees'
+FROM departments AS d
+	JOIN dept_emp AS de ON de.dept_no = d.dept_no
 WHERE de.to_date > curdate()
-GROUP BY ed.dept_no, ed.dept_name;
+GROUP BY d.dept_no, d.dept_name;
 
-# 7. 
+# 7. Which department has the highest average salary? 
 
 
