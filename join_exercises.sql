@@ -61,5 +61,38 @@ ORDER BY d.dept_name;
 
 # 4. Find the current titles of employees currently working in the Customer Service department
 
+SELECT t.title AS 'Title', COUNT(*) AS Count
+FROM dept_emp AS de
+JOIN titles AS t 
+	ON t.emp_no = de.emp_no
+WHERE t.to_date > curdate()
+	AND de.dept_no = 'd009'
+GROUP BY t.title;
+
+# 5. Find the current salary of all current managers.
+
+SELECT d.dept_name AS 'Department Name', 
+	CONCAT(e.first_name, ' ', e.last_name) AS 'Name',
+	s.salary AS 'Salary'
+FROM employees AS e
+JOIN dept_manager AS dm
+  ON dm.emp_no = e.emp_no
+JOIN departments AS d
+  ON d.dept_no = dm.dept_no
+JOIN salaries AS s
+  ON s.emp_no = e.emp_no
+WHERE dm.to_date > curdate()
+	AND s.to_date > curdate()
+ORDER BY d.dept_name;
+
+# 6. Find the number of current employees in each department.
+
+SELECT ed.dept_no, ed.dept_name, COUNT(de.emp_no)
+FROM employees_with_departments AS ed
+	JOIN dept_emp AS de ON de.emp_no = ed.emp_no
+WHERE de.to_date > curdate()
+GROUP BY ed.dept_no, ed.dept_name;
+
+# 7. 
 
 
