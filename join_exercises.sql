@@ -95,4 +95,36 @@ GROUP BY d.dept_no, d.dept_name;
 
 # 7. Which department has the highest average salary? 
 
+SELECT ed.dept_name, AVG(s.salary) AS average_salary
+FROM employees_with_departments AS ed
+JOIN salaries AS s ON ed.emp_no = s.emp_no
+WHERE s.to_date > curdate()
+GROUP BY ed.dept_name
+ORDER BY AVG(s.salary) DESC
+LIMIT 1;
+
+# 8. Who is the highest paid employee in the Marketing department
+
+SELECT ed.first_name, ed.last_name
+FROM employees_with_departments AS ed
+JOIN salaries AS s ON ed.emp_no = s.emp_no
+WHERE ed.dept_name = 'Marketing'
+GROUP BY ed.first_name, ed.last_name
+ORDER BY s.salary DESC
+LIMIT 1;
+
+# 9. Which current department manager has the highest salary?
+
+SELECT e.first_name, e.last_name, s.salary, d.dept_name
+FROM employees AS e
+JOIN dept_manager as dm
+  ON dm.emp_no = e.emp_no
+JOIN salaries AS s
+  ON s.emp_no = e.emp_no
+JOIN departments AS d
+  ON d.dept_no = dm.dept_no 
+WHERE dm.to_date > curdate()
+ORDER BY s.salary DESC
+LIMIT 1;
+
 
