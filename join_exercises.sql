@@ -107,11 +107,16 @@ LIMIT 1;
 
 # 8. Who is the highest paid employee in the Marketing department
 
-SELECT ed.first_name, ed.last_name
-FROM employees_with_departments AS ed
-JOIN salaries AS s ON ed.emp_no = s.emp_no
-WHERE ed.dept_name = 'Marketing'
-GROUP BY ed.first_name, ed.last_name
+SELECT
+	e.first_name,
+	e.last_name
+FROM employees AS e
+JOIN dept_emp AS de ON e.emp_no = de.emp_no
+	AND de.to_date > CURDATE()
+JOIN salaries AS s ON e.emp_no = s.emp_no
+	AND s.to_date > CURDATE()
+JOIN departments AS d ON de.dept_no = d.dept_no
+	AND d.dept_name = 'Marketing'
 ORDER BY s.salary DESC
 LIMIT 1;
 
@@ -129,4 +134,16 @@ WHERE dm.to_date > curdate()
 ORDER BY s.salary DESC
 LIMIT 1;
 
+# Remaider for compairison puposes only -
 
+# 10. Ryans solution
+
+select concat(employees.first_name, " ", employees.last_name) as "employee_name",
+dept_name, concat(managers.first_name, " ", managers.last_name) as "manager_name"
+from employees
+join dept_emp using(emp_no)
+join departments using(dept_no)
+join dept_manager using(dept_no)
+join employees as managers on managers.emp_no = dept_manager.emp.no
+where dept_manager.to_date > curdate()
+    and dept_emp.to_date > curdate();
