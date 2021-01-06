@@ -9,6 +9,10 @@ where hire_date in
 	from employees
 	where emp_no = '101010'
 );
+
+/*
+55 observations
+*/
  
 # 2. Find all the titles ever held by all current employees with the first name Aamod.
 
@@ -23,6 +27,14 @@ where titles.emp_no in
 	)
 group by title;
 
+/*
+Assistant Engineer
+Engineer
+Senior Engineer
+Senior Staff
+Staff
+Technique Leader
+*/
 
 # 3. How many people in the employees table are no longer working for the company?
 
