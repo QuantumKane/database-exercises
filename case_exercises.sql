@@ -31,6 +31,15 @@ SELECT first_name, last_name,
 		END AS alpha_group
 FROM employees;	
 
+Lori Solution:
+select first_name, last_name, 
+case
+	when last_name < 'I' then 'A-H'
+	when last_name < 'R' then 'I-Q'
+	when last_name > 'Q' then 'R-Z'	
+	else null
+	end as alpha_group	
+from employees;
 
 # 3. How many employees (current or previous) were born in each decade?
 
