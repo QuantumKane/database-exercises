@@ -41,3 +41,6 @@ SELECT birth_date,
 	END AS by_decade
 	FROM employees
 ORDER BY birth_date DESC;
+
+
+# Bonus: What is the current average salary for each of the following department groups: R&D, Sales & Marketing, Prod & QM, Finance & HR, Customer Service?
