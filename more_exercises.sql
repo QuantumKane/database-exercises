@@ -17,7 +17,6 @@ ORDER BY num_countries ASC;
 
 SELECT region, population
 FROM country
-#ORDER BY region
 ORDER BY population DESC;
 
 # What is the population for each continent?
