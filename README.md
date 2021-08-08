@@ -7,4 +7,4 @@ This repo holds the practice work for the database module at Codeup.
 
 - MySQL is an open-source relational database management system. A relational database organizes data into one or more data tables in which data types may be related to each other; these relations help structure the data. SQL is a language programmers use to create, modify and extract data from the relational database, as well as control user access to the database. In addition to relational databases and SQL, an RDBMS like MySQL works with an operating system to implement a relational database in a computer's storage system, manages users, allows for network access and facilitates testing database integrity and creation of backups. [Wikipedia](https://en.wikipedia.org/wiki/MySQL)
 
-- A temporary table is a base table that is not stored in the database, but instead exists only while the database session in which it was created is active. 
+- A temporary table is a base table that is not stored in the database, but instead exists only while the database session in which it was created is active. [Temporary Tables](https://www.sciencedirect.com/topics/computer-science/temporary-table)
