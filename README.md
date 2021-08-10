@@ -14,6 +14,7 @@ This repo holds the practice work for the database module at Codeup.
 
 ## Joins
 - The SQL Joins clause is used to combine records from two or more tables in a database. A JOIN is a means for combining fields from two tables by using values common to each.
+
 ###There are different types of joins available in SQL:
 
 - INNER JOIN − returns rows when there is a match in both tables.
