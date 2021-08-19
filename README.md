@@ -25,4 +25,4 @@ This repo holds the practice work for the database module at Codeup.
 
 - FULL JOIN − returns rows when there is a match in one of the tables.
 
-- SELF JOIN − is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.
+- SELF JOIN − is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.[SQL - Using Joins](https://www.tutorialspoint.com/sql/sql-using-joins.htm)
